@@ -44,6 +44,13 @@ public class PlayerCollision : MonoBehaviour
 
         if (collisionInfo.collider.tag == "Answer")
         {
+
+            //change equation to the new one
+            FindObjectOfType<EquationGenerator>().GenerateEquation();
+
+
+            //explode the cube
+
             collisionInfo.gameObject.SetActive(false);
 
             //loop 3 times to create 5*5*5 pieces in x, y, z coordinates
@@ -81,7 +88,7 @@ public class PlayerCollision : MonoBehaviour
 
     
 
-    //create piece
+    //create piece for exploding cube
    void createPiece(int x, int y, int z)
     {
         GameObject piece;

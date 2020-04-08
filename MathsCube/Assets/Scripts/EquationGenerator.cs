@@ -11,9 +11,7 @@ public class EquationGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstVar = Random.Range(0, 10);
-        secondVar = Random.Range(0, 10);
-        equation.text = firstVar + " * " + secondVar;
+        GenerateEquation();   
     }
 
     // Update is called once per frame
@@ -22,10 +20,12 @@ public class EquationGenerator : MonoBehaviour
 
     }
 
-    ////method that generates a random number between 0 and 9
-    //int RandomNumberGen()
-    //{
-    //    return Random.Range(0, 10);
-    //}
+    //method called to generage equation
+    public void GenerateEquation()
+    {
+        firstVar = Random.Range(0, 10);
+        secondVar = Random.Range(0, 10);
+        equation.text = firstVar + " * " + secondVar;
+    }
 
 }

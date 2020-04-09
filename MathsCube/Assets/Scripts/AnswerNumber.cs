@@ -21,9 +21,9 @@ public class AnswerNumber : MonoBehaviour{
     void Update()
     {
 
-        Vector3 namePose = Camera.main.WorldToScreenPoint(this.transform.position);
+        //Vector3 namePose = Camera.main.WorldToScreenPoint(this.transform.position);
         
-        answerNumber.transform.position = namePose;
+       // answerNumber.transform.position = namePose;
 
 
     }

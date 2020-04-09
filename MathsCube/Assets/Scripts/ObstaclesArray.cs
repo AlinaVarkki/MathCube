@@ -14,9 +14,6 @@ public class ObstaclesArray : MonoBehaviour
     void Start()
     {
 
-
-
-        AssignCubesRightAnswers();
         
         ////getting right answer
 
@@ -56,20 +53,25 @@ public class ObstaclesArray : MonoBehaviour
 
     }
 
-    void AssignCubesRightAnswers()
+    public void AssignCubesRightAnswers()
     {
         int Nextgroup = 0;
 
-        //aassign all cubes with a differennce right numbers
+        //assign all cubes with a difference right numbers
         for (int i = 0; i < 6; i++)
         {
-            //random withing group of  10
-            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 10);
-            int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
-            obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
-            obstaclesArray[randomCubeNumber].tag = "Answer";
+            
 
-            Nextgroup = Nextgroup + 10;
+            //random withing group of  10
+            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 5);
+            int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
+
+            Debug.Log(answer);
+
+
+            obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
+
+            Nextgroup = Nextgroup + 5;
 
             obstaclesArray[randomCubeNumber].tag = "Answer";
 

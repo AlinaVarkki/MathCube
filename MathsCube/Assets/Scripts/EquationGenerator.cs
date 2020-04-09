@@ -19,7 +19,17 @@ public class EquationGenerator : MonoBehaviour
         FillArrays();
         NextEquation();
 
+        
+        
+
+        for (int i = 0; i < 10; i++) {
+            Debug.Log("first "+numbers1[i]);
+            Debug.Log("second " + numbers2[i]);
+        }
+
         //GenerateEquation();   
+
+        FindObjectOfType<ObstaclesArray>().AssignCubesRightAnswers();
     }
 
     // Update is called once per frame
@@ -39,6 +49,9 @@ public class EquationGenerator : MonoBehaviour
 
     private void FillArrays()
     {
+        numbers1 = new int[20];
+        numbers1 = new int[20];
+
         for (int i = 0; i < 20; i++)
         {
             numbers1[i] = Random.Range(0, 10);

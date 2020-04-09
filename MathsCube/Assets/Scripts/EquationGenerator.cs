@@ -8,8 +8,8 @@ public class EquationGenerator : MonoBehaviour
     public int firstVar;
     public int secondVar;
     //arrays to hold first and second values generated for the equation 
-    private int[] numbers1 = new int[20];
-    private int[] numbers2 = new int[20];
+    public int[] numbers1 = new int[20];
+    public int[] numbers2 = new int[20];
     private int currentEquationNumber = 0;
 
     // Start is called before the first frame update

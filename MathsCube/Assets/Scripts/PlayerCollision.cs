@@ -30,9 +30,9 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter(Collision collisionInfo)
     {
 
-        int numberOnCube = an.numberOnCube;
-        int answer = oa.answer;
-        int rightCubeNumber = oa.randomCubeNumber;
+        //int numberOnCube = an.numberOnCube;
+       // int answer = oa.answer;
+        //int rightCubeNumber = oa.randomCubeNumber;
 
 
         if (collisionInfo.collider.tag == "Obstacle")

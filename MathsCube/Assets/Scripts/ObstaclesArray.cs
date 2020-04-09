@@ -4,42 +4,48 @@ using UnityEngine;
 public class ObstaclesArray : MonoBehaviour
 {
     public AnswerNumber[] obstaclesArray;
-    public EquationGenerator eg;
-    public int answer;
-    public int randomCubeNumber;
+    //public EquationGenerator eg;
+    //public int answer;
+    //public int randomCubeNumber;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+        AssignCubesRightAnswers();
         
-        //getting right answer
+        ////getting right answer
 
-        //variables used in current equation
-        var first = eg.firstVar;
-        var second = eg.secondVar;
+        ////variables used in current equation
+        //var first = eg.firstVar;
+        //var second = eg.secondVar;
 
-        Debug.Log(first);
-        Debug.Log(second);
+        //Debug.Log(first);
+        //Debug.Log(second);
 
-        //calculating equation answer
-        answer = first * second;
+        ////calculating equation answer
+        //answer = first * second;
 
-        Debug.Log(answer);
+        //Debug.Log(answer);
 
-        randomCubeNumber = Random.Range(0, obstaclesArray.Length - 1);
-        obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
-        obstaclesArray[randomCubeNumber].tag = "Answer";
+        //randomCubeNumber = Random.Range(0, obstaclesArray.Length - 1);
+        //obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
+        //obstaclesArray[randomCubeNumber].tag = "Answer";
 
-        //going through the array and changing tag to answer if some othe answer is same
-        //hope it works
-        foreach(AnswerNumber an in obstaclesArray)
-        {
-            //if the number is answer, change tag
-            if (an.answerNumber.text == answer.ToString())
-            {
-                an.tag = "Answer";
-            }
-        }
+        ////going through the array and changing tag to answer if some othe answer is same
+        ////hope it works
+        //foreach(AnswerNumber an in obstaclesArray)
+        //{
+        //    //if the number is answer, change tag
+        //    if (an.answerNumber.text == answer.ToString())
+        //    {
+        //        an.tag = "Answer";
+        //    }
+        //}
 
 
     }
@@ -48,6 +54,36 @@ public class ObstaclesArray : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void AssignCubesRightAnswers()
+    {
+        int Nextgroup = 0;
+
+        //aassign all cubes with a differennce right numbers
+        for (int i = 0; i < 6; i++)
+        {
+            //random withing group of  10
+            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 10);
+            int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
+            obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
+            obstaclesArray[randomCubeNumber].tag = "Answer";
+
+            Nextgroup = Nextgroup + 10;
+
+            obstaclesArray[randomCubeNumber].tag = "Answer";
+
+            //going through the array and changing tag to answer if some othe answer is same
+            //hope it works
+            foreach (AnswerNumber an in obstaclesArray)
+            {
+                //if the number is answer, change tag
+                if (an.answerNumber.text == answer.ToString())
+                {
+                    an.tag = "Answer";
+                }
+            }
+        }
     }
 
 

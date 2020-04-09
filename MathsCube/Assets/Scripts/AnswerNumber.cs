@@ -11,8 +11,11 @@ public class AnswerNumber : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
-        numberOnCube = Random.Range(0, 10);
-        answerNumber.text = numberOnCube.ToString();
+        if (answerNumber.text == "")
+        {
+            numberOnCube = Random.Range(0, 10);
+            answerNumber.text = numberOnCube.ToString();
+        }
 
 
     }

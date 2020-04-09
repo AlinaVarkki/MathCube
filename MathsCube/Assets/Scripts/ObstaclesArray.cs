@@ -58,12 +58,12 @@ public class ObstaclesArray : MonoBehaviour
         int Nextgroup = 0;
 
         //assign all cubes with a difference right numbers
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 5; i++)
         {
             
 
             //random withing group of  10
-            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 5);
+            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 10);
             int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
 
             Debug.Log(answer);
@@ -71,7 +71,7 @@ public class ObstaclesArray : MonoBehaviour
 
             obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
 
-            Nextgroup = Nextgroup + 5;
+            Nextgroup = Nextgroup + 10;
 
             obstaclesArray[randomCubeNumber].tag = "Answer";
 
@@ -86,6 +86,24 @@ public class ObstaclesArray : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public void AssignCubesRightAnswers2()
+    {
+
+        //assign all cubes with a difference right numbers
+ 
+            
+
+ 
+            int answer = FindObjectOfType<EquationGenerator>().numbers1[0] * FindObjectOfType<EquationGenerator>().numbers2[0];
+
+            Debug.Log(answer);
+
+
+            obstaclesArray[0].answerNumber.text = answer.ToString();
+
+
     }
 
 

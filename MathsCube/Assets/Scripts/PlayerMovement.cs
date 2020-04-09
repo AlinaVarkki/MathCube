@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
 
+
+
+
     public Rigidbody rb;
 
     public float forwardForce = 20f;
-    public float sideways = 500f;
+    public float sideways = 200f;
     private float screenCenterX;
 
     // Start is called before the first frame update
@@ -20,16 +23,18 @@ public class PlayerMovement : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+
+
         rb.AddForce(0, 0, forwardForce  * Time.deltaTime);
 
 
         if (Input.touchCount > 0)
         {
-            Touch firstTouch = Input.GetTouch(0);
+        Touch firstTouch = Input.GetTouch(0);
 
-            // if it began this frame
-            if (firstTouch.phase == TouchPhase.Began)
-            {
+        // if it began this frame
+        if (firstTouch.phase == TouchPhase.Began)
+        {
                 if (firstTouch.position.x > screenCenterX)
                 {
                     // if the touch position is to the right of center
@@ -46,7 +51,7 @@ public class PlayerMovement : MonoBehaviour{
                 }
             }
 
-        }
+    }
 
         if(rb.position.y < -5.96f)
         {

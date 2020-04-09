@@ -46,7 +46,7 @@ public class PlayerCollision : MonoBehaviour
         {
 
             //change equation to the new one
-            FindObjectOfType<EquationGenerator>().GenerateEquation();
+            FindObjectOfType<EquationGenerator>().NextEquation();
 
 
             //explode the cube

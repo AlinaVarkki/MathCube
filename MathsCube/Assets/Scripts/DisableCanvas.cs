@@ -11,9 +11,14 @@ public class DisableCanvas : MonoBehaviour
     {
 
         //only enable canvas when player is on a certain distance
-        if (obstacle.position.z  - rb.position.z < 50f)
+        if (obstacle.position.z  - rb.position.z < 30f)
         {
             numberCanvas.enabled = true;
+        }
+        
+        if (obstacle.position.z  - rb.position.z < 7f)
+        {
+            numberCanvas.enabled = false;
         }
 
         //if position of cube is futher, disable canvas

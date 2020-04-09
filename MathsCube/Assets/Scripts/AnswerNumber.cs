@@ -24,7 +24,11 @@ public class AnswerNumber : MonoBehaviour{
         Vector3 namePose = Camera.main.WorldToScreenPoint(this.transform.position);
         
         answerNumber.transform.position = namePose;
+
+
     }
+
+
 
    
 }

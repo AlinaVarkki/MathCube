@@ -41,7 +41,7 @@ public class ObstaclesArray : MonoBehaviour
 
         //assign all cubes with a difference right numbers
         //there will be 10 equations in the round
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
             
             

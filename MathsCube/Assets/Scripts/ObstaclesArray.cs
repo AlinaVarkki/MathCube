@@ -22,11 +22,11 @@ public class ObstaclesArray : MonoBehaviour
     void Update()
     {
 
-        //if cube is futher than the right answer cube, assigned to the current equation -> next equation
-        if (player.position.z > obstaclesArray[equationAndndomCube[FindObjectOfType<EquationGenerator>().currentEquationNumber]].transform.position.z)
-        {
-            FindObjectOfType<EquationGenerator>().NextEquation();
-        }
+        ////if cube is futher than the right answer cube, assigned to the current equation -> next equation
+        //if (player.position.z > obstaclesArray[equationAndndomCube[FindObjectOfType<EquationGenerator>().currentEquationNumber]].transform.position.z)
+        //{
+        //    FindObjectOfType<EquationGenerator>().NextEquation();
+        //}
         
 
     }
@@ -41,7 +41,7 @@ public class ObstaclesArray : MonoBehaviour
 
         //assign all cubes with a difference right numbers
         //there will be 10 equations in the round
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 10; i++)
         {
             
             

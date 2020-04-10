@@ -69,9 +69,14 @@ public class EquationGenerator : MonoBehaviour
         //assign correct tags to current equation right answers
         for(int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
         {
-            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString())
+            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
             {
                 FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+            }
+            else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
+            {
+
+                //don't do anything in this case
             }
             else {
                 //if answer of cube is not current equation answer, tag is obstacle

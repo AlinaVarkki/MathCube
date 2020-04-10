@@ -42,7 +42,7 @@ public class PlayerCollision : MonoBehaviour
 
         }
 
-        if (collisionInfo.collider.tag == "Answer")
+        if (collisionInfo.collider.tag == "Answer" || collisionInfo.collider.tag == "OriginalAnswer")
         {
 
             //change equation to the new one

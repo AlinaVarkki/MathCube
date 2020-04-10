@@ -57,7 +57,9 @@ public class ObstaclesArray : MonoBehaviour
 
             Nextgroup = Nextgroup + 8 + 3;
 
-            //obstaclesArray[randomCubeNumber].tag = "Answer";
+
+
+            obstaclesArray[randomCubeNumber].tag = "OriginalAnswer";
 
             ////going through the array and changing tag to answer if some othe answer is same
             ////hope it works

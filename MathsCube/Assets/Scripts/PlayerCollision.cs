@@ -45,6 +45,11 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.tag == "Answer" || collisionInfo.collider.tag == "OriginalAnswer")
         {
 
+
+            //if correct cube is broken, update score
+            FindObjectOfType<Score>().UpdateScore();
+
+
             //change equation to the new one
             FindObjectOfType<EquationGenerator>().NextEquation();
 

@@ -7,17 +7,17 @@ public class EquationGenerator : MonoBehaviour
     public Text equation;
     public int firstVar;
     public int secondVar;
-    //arrays to hold first and second values generated for the equation 
-    public int[] numbers1 = new int[20];
-    public int[] numbers2 = new int[20];
-    private int currentEquationNumber = 0;
+    //arrays to hold first and second values generated for the equation
+    //10 values in the round
+    public int[] numbers1;
+    public int[] numbers2;
+    public int currentEquationNumber = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         //fill arrays with numbers at the beginning 
         FillArrays();
-        NextEquation();
 
         
         
@@ -30,6 +30,9 @@ public class EquationGenerator : MonoBehaviour
         //GenerateEquation();   
 
         FindObjectOfType<ObstaclesArray>().AssignCubesRightAnswers();
+
+        NextEquation();
+
     }
 
     // Update is called once per frame
@@ -38,21 +41,12 @@ public class EquationGenerator : MonoBehaviour
 
     }
 
-
-    ////method called to generage equation
-    //public void GenerateEquation()
-    //{
-    //    firstVar = Random.Range(0, 10);
-    //    secondVar = Random.Range(0, 10);
-    //    equation.text = firstVar + " * " + secondVar;
-    //}
-
     private void FillArrays()
     {
-        numbers1 = new int[20];
-        numbers1 = new int[20];
+        numbers1 = new int[10];
+        numbers1 = new int[10];
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 10; i++)
         {
             numbers1[i] = Random.Range(0, 10);
             numbers2[i] = Random.Range(0, 10);
@@ -61,10 +55,31 @@ public class EquationGenerator : MonoBehaviour
 
     public void NextEquation()
     {
-        firstVar = numbers1[currentEquationNumber];
-        secondVar = numbers2[currentEquationNumber];
-        equation.text = firstVar + " * " + secondVar;
-        currentEquationNumber++;
+        if (currentEquationNumber < numbers1.Length)
+        {
+            firstVar = numbers1[currentEquationNumber];
+            secondVar = numbers2[currentEquationNumber];
+            equation.text = firstVar + " * " + secondVar;
+            currentEquationNumber++;
+        }
+        else {
+            equation.text = "Good job!";
+        }
+
+        //assign correct tags to current equation right answers
+        for(int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+        {
+            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString())
+            {
+                FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+            }
+            else {
+                //if answer of cube is not current equation answer, tag is obstacle
+                FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+            }
+        }
+
+
     }
 
 }

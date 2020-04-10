@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour{
     public Rigidbody rb;
 
     public float forwardForce = 20f;
-    public float sideways = 200f;
+    public float sideways = 20f;
     private float screenCenterX;
 
     // Start is called before the first frame update

@@ -25,7 +25,6 @@ public class AnswerNumber : MonoBehaviour{
             answerNumber.text = numberOnCube.ToString();
         }
 
-
     }
 
     // Update is called once per frame

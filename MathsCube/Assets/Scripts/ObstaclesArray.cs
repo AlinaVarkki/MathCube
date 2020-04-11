@@ -32,6 +32,7 @@ public class ObstaclesArray : MonoBehaviour
     //called after arrays with variables are populated
     public void AssignCubesRightAnswers()
     {
+        int randomCubeNumber;
         //starting with 3 to not place anything on first 3 cubes
         int Nextgroup = 0;
 
@@ -39,14 +40,18 @@ public class ObstaclesArray : MonoBehaviour
         //there will be 10 equations in the round
         for (int i = 0; i < 10; i++)
         {
-            
-            
 
-            //random withing group of  8 after 3 cubes
-            int randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 8);
+
+            if (i == 0)
+            {
+                randomCubeNumber = 0;
+            }
+            else
+            {
+                //random withing group of  8 after 3 cubes
+                randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 8);
+            }
             int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
-
-            Debug.Log(answer);
 
             
 
@@ -65,7 +70,7 @@ public class ObstaclesArray : MonoBehaviour
 
         }
 
-
+        
     }
 
 }

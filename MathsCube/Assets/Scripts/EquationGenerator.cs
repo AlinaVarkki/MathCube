@@ -20,9 +20,7 @@ public class EquationGenerator : MonoBehaviour
         //fill arrays with numbers at the beginning 
         FillArrays();
 
-        
 
-        //GenerateEquation();   
 
         FindObjectOfType<ObstaclesArray>().AssignCubesRightAnswers();
 
@@ -43,8 +41,8 @@ public class EquationGenerator : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            numbers1[i] = Random.Range(0, 10);
-            numbers2[i] = Random.Range(0, 10);
+            numbers1[i] = Random.Range(0, 3);
+            numbers2[i] = Random.Range(0, 3);
         }
     }
 
@@ -61,11 +59,16 @@ public class EquationGenerator : MonoBehaviour
             equation.text = "Good job!";
         }
 
+
+
+
         //assign correct tags to current equation right answers
-        for(int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+        for (int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
         {
+            Debug.Log("22222222222");
             if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
             {
+                Debug.Log(i);
                 FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
             }
             else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")

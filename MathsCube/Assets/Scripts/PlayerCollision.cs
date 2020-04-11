@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
@@ -20,6 +21,8 @@ public class PlayerCollision : MonoBehaviour
 
     public Collider player;
 
+    Boolean life = true;
+
 
     void Start()
     {
@@ -37,9 +40,17 @@ public class PlayerCollision : MonoBehaviour
 
         if (collisionInfo.collider.tag == "Obstacle")
         {
-            movement.enabled = false;
-            FindObjectOfType<GameManager>().EndGame();
-
+            //if user still has life, remove it
+            if (life)
+            {
+                life = false;
+                FindObjectOfType<LifeDissapearance>().fadeOut();
+            }
+            else
+            {
+                movement.enabled = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
 
         if (collisionInfo.collider.tag == "Answer" || collisionInfo.collider.tag == "OriginalAnswer")

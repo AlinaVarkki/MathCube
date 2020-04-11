@@ -6,9 +6,9 @@ public class ObstaclesArray : MonoBehaviour
     public AnswerNumber[] obstaclesArray;
     //aka hashmap to store equation number ad randomly assigned cube
     //to check if player is futher
-    private Dictionary<int, int> equationAndndomCube = new Dictionary<int, int>();
+    public Dictionary<int, int> equationAndndomCube = new Dictionary<int, int>();
     public Rigidbody player;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,7 @@ public class ObstaclesArray : MonoBehaviour
     void Update()
     {
 
-        ////if cube is futher than the right answer cube, assigned to the current equation -> next equation
-        //if (player.position.z > obstaclesArray[equationAndndomCube[FindObjectOfType<EquationGenerator>().currentEquationNumber]].transform.position.z)
-        //{
-        //    FindObjectOfType<EquationGenerator>().NextEquation();
-        //}
+
         
 
     }
@@ -53,24 +49,16 @@ public class ObstaclesArray : MonoBehaviour
             Debug.Log(answer);
 
             equationAndndomCube.Add(i, randomCubeNumber);
+
             obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
 
             Nextgroup = Nextgroup + 8 + 3;
 
-
+            
 
             obstaclesArray[randomCubeNumber].tag = "OriginalAnswer";
 
-            ////going through the array and changing tag to answer if some othe answer is same
-            ////hope it works
-            //foreach (AnswerNumber an in obstaclesArray)
-            //{
-            //    //if the number is answer, change tag
-            //    if (an.answerNumber.text == answer.ToString())
-            //    {
-            //        an.tag = "Answer";
-            //    }
-            //}
+
         }
     }
 

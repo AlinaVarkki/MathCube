@@ -12,6 +12,7 @@ public class EquationGenerator : MonoBehaviour
     public int[] numbers1;
     public int[] numbers2;
     public int currentEquationNumber = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +84,7 @@ public class EquationGenerator : MonoBehaviour
                 FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
             }
         }
+
 
 
     }

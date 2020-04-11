@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class AnswerNumber : MonoBehaviour{
 
    public Rigidbody obstacle;
    public Rigidbody player;
+
+    //number value
+    public Text value;
     
 
     // Start is called before the first frame update
@@ -17,7 +21,7 @@ public class AnswerNumber : MonoBehaviour{
 
         if (answerNumber.text == "")
         {
-            numberOnCube = Random.Range(0, 10);
+            numberOnCube = UnityEngine.Random.Range(0, 10);
             answerNumber.text = numberOnCube.ToString();
         }
 
@@ -30,6 +34,7 @@ public class AnswerNumber : MonoBehaviour{
 
         
         //if the body is passed 
+        //check if it is answer for current equation
         if (obstacle.tag == "OriginalAnswer" && player.position.z > obstacle.position.z)
        {
           FindObjectOfType<EquationGenerator>().NextEquation();

@@ -304,3 +304,4 @@ MonoBehaviour:
   answerNumber: {fileID: 3451878696781227210}
   obstacle: {fileID: 5237441541421552897}
   player: {fileID: 1779201944928499227, guid: f0d5b4fc6a39e1d4697d90b0498526dc, type: 3}
+  value: {fileID: 3451878696781227210}

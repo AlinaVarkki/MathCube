@@ -59,22 +59,17 @@ public class PlayerMovement : MonoBehaviour{
         }
 
 
-        Debug.Log(FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber]);
-        for (int i = 0; i < FindObjectOfType<ObstaclesArray>().cubeAndlocation.Count; i++) { 
-        Debug.Log("map : " + FindObjectOfType<ObstaclesArray>().cubeAndlocation[i]); 
-            }
+       
 
 
-            if (FindObjectOfType<EquationGenerator>().currentEquationNumber < 9)
-            {
-                if (FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber - 1].z < rb.position.z)
+                if (FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber - 1].z < rb.position.z )
                 // if (Vector3.Distance(FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber], rb.position) > 1.0)
                 {
                     Debug.Log("got here");
                     FindObjectOfType<EquationGenerator>().NextEquation();
 
                 }
-            }
+            
         
 
 

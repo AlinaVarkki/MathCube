@@ -33,7 +33,7 @@ public class ObstaclesArray : MonoBehaviour
     public void AssignCubesRightAnswers()
     {
         //starting with 3 to not place anything on first 3 cubes
-        int Nextgroup = 3;
+        int Nextgroup = 0;
 
         //assign all cubes with a difference right numbers
         //there will be 10 equations in the round
@@ -64,6 +64,8 @@ public class ObstaclesArray : MonoBehaviour
 
 
         }
+
+
     }
 
 }

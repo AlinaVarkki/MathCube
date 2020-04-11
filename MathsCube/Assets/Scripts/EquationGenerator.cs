@@ -21,12 +21,6 @@ public class EquationGenerator : MonoBehaviour
         FillArrays();
 
         
-        
-
-        for (int i = 0; i < 10; i++) {
-            Debug.Log("first "+numbers1[i]);
-            Debug.Log("second " + numbers2[i]);
-        }
 
         //GenerateEquation();   
 
@@ -56,7 +50,7 @@ public class EquationGenerator : MonoBehaviour
 
     public void NextEquation()
     {
-        if (currentEquationNumber < numbers1.Length)
+        if (currentEquationNumber <numbers1.Length)
         {
             firstVar = numbers1[currentEquationNumber];
             secondVar = numbers2[currentEquationNumber];

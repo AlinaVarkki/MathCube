@@ -33,15 +33,6 @@ public class AnswerNumber : MonoBehaviour{
     {
 
         
-        //if the body is passed 
-        //check if it is answer for current equation
-        //if (obstacle.tag == "OriginalAnswer" && player.position.z > obstacle.position.z && FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber]) 
-//       if (FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber] > player.position.z) 
-  //     {
-    //      FindObjectOfType<EquationGenerator>().NextEquation();
-            
-      // }
-
     }
 
 }

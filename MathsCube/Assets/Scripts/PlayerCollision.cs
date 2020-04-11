@@ -17,12 +17,15 @@ public class PlayerCollision : MonoBehaviour
     public PlayerMovement movement;
    
     public AnswerNumber an;
-    public ObstaclesArray oa;
+    
 
     public Collider player;
 
-    Boolean life = true;
+    int lifeNo = 3;
 
+    public Image life1;
+    public Image life2;
+    public Image life3;
 
     void Start()
     {
@@ -38,13 +41,29 @@ public class PlayerCollision : MonoBehaviour
         //int rightCubeNumber = oa.randomCubeNumber;
 
 
+
+
+
         if (collisionInfo.collider.tag == "Obstacle")
         {
             //if user still has life, remove it
-            if (life)
+            if (lifeNo == 3)
             {
-                life = false;
-                FindObjectOfType<LifeDissapearance>().fadeOut();
+                //FindObjectOfType<LifeDissapearance>().fadeOut();
+                life1.GetComponent<LifeDissapearance>().fadeOut();
+                lifeNo--;
+            }
+            else if (lifeNo == 2)
+            {
+                //FindObjectOfType<LifeDissapearance>().fadeOut();
+                life2.GetComponent<LifeDissapearance>().fadeOut();
+                lifeNo--;
+            }
+            else if (lifeNo == 1)
+            {
+                //FindObjectOfType<LifeDissapearance>().fadeOut();
+                life3.GetComponent<LifeDissapearance>().fadeOut();
+                lifeNo--;
             }
             else
             {
@@ -52,6 +71,11 @@ public class PlayerCollision : MonoBehaviour
                 FindObjectOfType<GameManager>().EndGame();
             }
         }
+
+
+
+
+
 
         if (collisionInfo.collider.tag == "Answer" || collisionInfo.collider.tag == "OriginalAnswer")
         {

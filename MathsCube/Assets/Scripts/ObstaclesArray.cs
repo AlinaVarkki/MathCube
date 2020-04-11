@@ -6,7 +6,7 @@ public class ObstaclesArray : MonoBehaviour
     public AnswerNumber[] obstaclesArray;
     //aka hashmap to store equation number ad randomly assigned cube
     //to check if player is futher
-    public Dictionary<int, int> equationAndndomCube = new Dictionary<int, int>();
+    public Dictionary<int, Vector3> cubeAndlocation = new Dictionary<int, Vector3>();
     public Rigidbody player;
     
 
@@ -23,7 +23,7 @@ public class ObstaclesArray : MonoBehaviour
     {
 
 
-        
+
 
     }
 
@@ -48,15 +48,19 @@ public class ObstaclesArray : MonoBehaviour
 
             Debug.Log(answer);
 
-            equationAndndomCube.Add(i, randomCubeNumber);
+            
 
             obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();
 
+            cubeAndlocation.Add(i, obstaclesArray[randomCubeNumber].transform.position);
+
+            
             Nextgroup = Nextgroup + 8 + 3;
 
             
 
             obstaclesArray[randomCubeNumber].tag = "OriginalAnswer";
+
 
 
         }

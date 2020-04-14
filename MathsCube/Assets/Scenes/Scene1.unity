@@ -3539,6 +3539,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1706575169baae64e9e99a225d02fa3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &672406316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8737483907233820335, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888144413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c89b63166731442a35a132bc78a0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &673222321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7869836226610242887, guid: d452927d2da60054bb54c55cc07f358f,
@@ -10536,6 +10548,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 821705799}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1888144413
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8737483907233820332, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneFaider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737483907233820334, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a7e9bcb20471fb4d88446f4e89e7dcf, type: 3}
 --- !u!4 &1891830945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -12164,6 +12245,11 @@ PrefabInstance:
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 1698191222}
+    - target: {fileID: 7249058265707726368, guid: 596c9fe3a7b78f0419e8b899f6250a48,
+        type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 672406316}
     - target: {fileID: 7249058265707726369, guid: 596c9fe3a7b78f0419e8b899f6250a48,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GAME OVER");
             Invoke("Restart", restartDelay);
         }
+
     }
 
     void Restart()
@@ -30,4 +31,6 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         fader.FadeTo(SceneManager.GetActiveScene().name);
     }
+
+
 }

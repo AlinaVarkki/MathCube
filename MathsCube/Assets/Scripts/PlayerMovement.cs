@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour{
 
     public Rigidbody rb;
 
-    public float forwardForce = 20f;
-    public float sideways = 20f;
+    public float forwardForce = 2000f;
+    public float sidewaysForce = 5000f;
     private float screenCenterX;
 
     // Start is called before the first frame update
@@ -20,8 +20,9 @@ public class PlayerMovement : MonoBehaviour{
         screenCenterX = Screen.width * 0.5f;
     }
 
+    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
 
@@ -40,13 +41,13 @@ public class PlayerMovement : MonoBehaviour{
                     // if the touch position is to the right of center
                     // move right
                     //Debug.Log("RIGHT");
-                    rb.AddForce(300f * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                    rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
                 }
                 else if (firstTouch.position.x < screenCenterX)
                 {
                     //Debug.Log("LEFT");
-                    rb.AddForce(-300f * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                    rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
                 }
             }

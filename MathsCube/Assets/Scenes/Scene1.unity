@@ -686,6 +686,7 @@ GameObject:
   - component: {fileID: 70886053}
   - component: {fileID: 70886052}
   - component: {fileID: 70886051}
+  - component: {fileID: 70886054}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -803,6 +804,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70886049}
   m_CullTransparentMesh: 0
+--- !u!114 &70886054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70886049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!4 &75426666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -1467,7 +1483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000095367, y: 188}
+  m_AnchoredPosition: {x: 0.0000095367, y: 153}
   m_SizeDelta: {x: 526.2, y: 172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196278079
@@ -1483,16 +1499,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f786ba90565b97746991cfe740c0dfc4, type: 3}
-    m_FontSize: 101
+    m_FontSize: 110
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 145
     m_Alignment: 4
@@ -3671,6 +3687,7 @@ GameObject:
   - component: {fileID: 621743112}
   - component: {fileID: 621743111}
   - component: {fileID: 621743110}
+  - component: {fileID: 621743113}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -3788,6 +3805,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621743108}
   m_CullTransparentMesh: 0
+--- !u!114 &621743113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621743108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!4 &625471528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -8162,6 +8194,7 @@ GameObject:
   - component: {fileID: 1253280062}
   - component: {fileID: 1253280061}
   - component: {fileID: 1253280060}
+  - component: {fileID: 1253280063}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -8279,6 +8312,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253280058}
   m_CullTransparentMesh: 0
+--- !u!114 &1253280063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253280058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!4 &1260167774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -9461,7 +9509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.58873266, g: 0.914765, b: 0.9245283, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

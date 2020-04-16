@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class EquationGenerator : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class EquationGenerator : MonoBehaviour
     public int[] numbers1;
     public int[] numbers2;
     public int currentEquationNumber = 0;
-    
+
+
+    //panel appearing after last equation
+    public GameObject finishLevelPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,8 @@ public class EquationGenerator : MonoBehaviour
 
     public void NextEquation()
     {
-        if (currentEquationNumber <numbers1.Length)
+       // if (currentEquationNumber <numbers1.Length)
+        if (currentEquationNumber <2)
         {
             firstVar = numbers1[currentEquationNumber];
             secondVar = numbers2[currentEquationNumber];
@@ -56,8 +61,19 @@ public class EquationGenerator : MonoBehaviour
             currentEquationNumber++;
         }
         else {
+            //if used passed all the obstacles, show a screen with score, if score is 6-7, give 1 star, if 8- 2 starts, 9-10 - 3 start
+            //if score is more than 6, unlock next level 
+
+            //activate levelover panel
+
+            finishLevelPanel.SetActive(true);
+            Time.timeScale = 0f;
+            
+
             equation.text = "Good job!";
         }
+
+
 
 
 

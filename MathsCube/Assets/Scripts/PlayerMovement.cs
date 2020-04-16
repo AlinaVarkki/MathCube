@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour{
     public float forwardForce = 2000f;
     public float sidewaysForce = 5000f;
     private float screenCenterX;
+    public float decreasingSpeed = 1;
+    private float stopTime = 0;
+    public bool decreasing = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,6 +27,9 @@ public class PlayerMovement : MonoBehaviour{
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+      
 
 
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);

@@ -7,7 +7,7 @@ public class Score : MonoBehaviour{
 
     public Transform player;
     public Text scoreText;
-    private int score = 0;
+    public int score = 0;
 
     // Update is called once per frame
     void Update()

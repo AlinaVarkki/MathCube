@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -14,9 +15,12 @@ public class EquationGenerator : MonoBehaviour
     public int[] numbers2;
     public int currentEquationNumber = 0;
 
+    
 
     //panel appearing after last equation
     public GameObject finishLevelPanel;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,13 @@ public class EquationGenerator : MonoBehaviour
     void Update()
     {
 
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(40);
+        Debug.Log("got to wait");
+       
     }
 
     private void FillArrays()
@@ -65,9 +76,11 @@ public class EquationGenerator : MonoBehaviour
             //if score is more than 6, unlock next level 
 
             //activate levelover panel
-
-            finishLevelPanel.SetActive(true);
+            
             Time.timeScale = 0f;
+            StartCoroutine(wait());
+            finishLevelPanel.SetActive(true);
+
             
 
             equation.text = "Good job!";
@@ -81,10 +94,10 @@ public class EquationGenerator : MonoBehaviour
         //assign correct tags to current equation right answers
         for (int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
         {
-            Debug.Log("22222222222");
+         
             if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
             {
-                Debug.Log(i);
+
                 FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
             }
             else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
@@ -100,6 +113,10 @@ public class EquationGenerator : MonoBehaviour
 
 
 
+
+
     }
+
+
 
 }

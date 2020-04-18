@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
 
   public Image pause;
     public GameObject ui;
-   
+    public AudioSource click;
+
     public void PauseCLicked()
     {
         Toggle();
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Toggle()
     {
+        click.Play();
         ui.SetActive(!ui.activeSelf);
 
         if (ui.activeSelf)
@@ -31,12 +33,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
+        click.Play();
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Menu()
     {
+        click.Play();
         Toggle();
         SceneManager.LoadScene(0);
     }

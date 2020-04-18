@@ -27,6 +27,9 @@ public class PlayerCollision : MonoBehaviour
     public Image life2;
     public Image life3;
 
+    public AudioSource breakObstacle;
+    public AudioSource bump;
+
     void Start()
     {
         cubesPivotDistance = cubeSize * cubesInRow / 2;
@@ -46,6 +49,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collisionInfo.collider.tag == "Obstacle")
         {
+            bump.Play();
             //if user still has life, remove it
             if (lifeNo == 3)
             {
@@ -67,8 +71,20 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                movement.enabled = false;
-                FindObjectOfType<GameManager>().EndGame();
+                if (FindObjectOfType<Score>().score > 5) 
+                {
+                    //stop the object first
+                    FindObjectOfType<PlayerMovement>().decreasing = true;
+
+                    FindObjectOfType<LevelComplete>().AssignStars();
+                    FindObjectOfType<EquationGenerator>().finishLevelPanel.SetActive(true);
+                }
+                else
+                {
+                    movement.enabled = false;
+                    FindObjectOfType<GameManager>().EndGame();
+                }
+
             }
         }
 
@@ -79,6 +95,8 @@ public class PlayerCollision : MonoBehaviour
 
         if (collisionInfo.collider.tag == "Answer" || collisionInfo.collider.tag == "OriginalAnswer")
         {
+
+            breakObstacle.Play();
 
 
             //if correct cube is broken, update score

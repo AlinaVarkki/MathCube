@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour{
 
@@ -9,12 +10,16 @@ public class PlayerMovement : MonoBehaviour{
 
     public Rigidbody rb;
 
+    public GameObject finishPanel;
+
     public float forwardForce = 2000f;
     public float sidewaysForce = 5000f;
     private float screenCenterX;
     public float decreasingSpeed = 1;
-    private float stopTime = 0;
+
     public bool decreasing = false;
+
+    public AudioSource moveSound;
 
     // Start is called before the first frame update
     private void Start()
@@ -25,15 +30,25 @@ public class PlayerMovement : MonoBehaviour{
 
     
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-
-
-      
-
 
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
+
+        if (decreasing == true)
+        {
+            sidewaysForce = 0f;
+            forwardForce = forwardForce - 100f;
+        }
+
+        if(forwardForce < 200f)
+        {
+            forwardForce = 0f;
+            
+            FindObjectOfType<EquationGenerator>().finishLevelPanel.SetActive(true);
+        }
+        
 
         if (Input.touchCount > 0)
         {
@@ -47,11 +62,13 @@ public class PlayerMovement : MonoBehaviour{
                     // if the touch position is to the right of center
                     // move right
                     //Debug.Log("RIGHT");
+                    moveSound.Play();
                     rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
                 }
                 else if (firstTouch.position.x < screenCenterX)
                 {
+                    moveSound.Play();
                     //Debug.Log("LEFT");
                     rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
@@ -62,7 +79,15 @@ public class PlayerMovement : MonoBehaviour{
 
         if (rb.position.y < -5.96f)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            //if score is more than 6, finish with panel
+            if (FindObjectOfType<Score>().score > 5)
+            {
+                FindObjectOfType<LevelComplete>().AssignStars();
+                FindObjectOfType<EquationGenerator>().finishLevelPanel.SetActive(true);
+            }
+            else {
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
 
 
@@ -72,7 +97,7 @@ public class PlayerMovement : MonoBehaviour{
                 if (FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber - 1].z < rb.position.z )
                 // if (Vector3.Distance(FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber], rb.position) > 1.0)
                 {
-                    Debug.Log("got here");
+                    
                     FindObjectOfType<EquationGenerator>().NextEquation();
 
                 }

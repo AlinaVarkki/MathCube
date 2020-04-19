@@ -58,7 +58,7 @@ public class EquationGenerator : MonoBehaviour
     public void NextEquation()
     {
        if (currentEquationNumber <numbers1.Length)
-      //  if (currentEquationNumber <2)
+      // if (currentEquationNumber <2)
         {
             firstVar = numbers1[currentEquationNumber];
             secondVar = numbers2[currentEquationNumber];
@@ -85,6 +85,7 @@ public class EquationGenerator : MonoBehaviour
             
 
             equation.text = "Good job!";
+
         }
 
 

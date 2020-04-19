@@ -1,6 +1,8 @@
 ﻿using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour{
@@ -18,14 +20,18 @@ public class PlayerMovement : MonoBehaviour{
     public float decreasingSpeed = 1;
 
     public bool decreasing = false;
+    public bool once;
 
     public AudioSource moveSound;
 
     // Start is called before the first frame update
     private void Start()
     {
+
+
         // save the horizontal center of the screen
         screenCenterX = Screen.width * 0.5f;
+        once = true;
     }
 
     
@@ -52,6 +58,8 @@ public class PlayerMovement : MonoBehaviour{
 
         if (Input.touchCount > 0)
         {
+            
+
             Touch firstTouch = Input.GetTouch(0);
 
             // if it began this frame
@@ -59,6 +67,7 @@ public class PlayerMovement : MonoBehaviour{
             {
                 if (firstTouch.position.x > screenCenterX)
                 {
+                   
                     // if the touch position is to the right of center
                     // move right
                     //Debug.Log("RIGHT");
@@ -79,6 +88,14 @@ public class PlayerMovement : MonoBehaviour{
 
         if (rb.position.y < -5.96f)
         {
+
+            if (FindObjectOfType<Score>().score > 2 && once == true)
+            {
+                rb.GetComponent<AdManager>().showAd();
+                once = false;
+
+            }
+
             //if score is more than 6, finish with panel
             if (FindObjectOfType<Score>().score > 5)
             {
@@ -89,9 +106,6 @@ public class PlayerMovement : MonoBehaviour{
                 FindObjectOfType<GameManager>().EndGame();
             }
         }
-
-
-       
 
 
                 if (FindObjectOfType<ObstaclesArray>().cubeAndlocation[FindObjectOfType<EquationGenerator>().currentEquationNumber - 1].z < rb.position.z )

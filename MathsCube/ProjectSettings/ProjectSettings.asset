@@ -664,10 +664,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: d8418671-dc4a-4a43-af5e-358b33683ee9
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: MathCube
+  organizationId: varkkia99
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

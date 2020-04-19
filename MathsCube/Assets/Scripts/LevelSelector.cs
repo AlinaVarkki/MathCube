@@ -8,6 +8,8 @@ public class LevelSelector : MonoBehaviour
 
     public AudioSource click;
 
+
+
     private void Start()
     {
         int levelReached = PlayerPrefs.GetInt("LevelReached", 1);
@@ -20,7 +22,10 @@ public class LevelSelector : MonoBehaviour
                 levelButtons[i].interactable = false;
             }
            
+
         }
+
+
     }
 
     public void Select(string levelName)

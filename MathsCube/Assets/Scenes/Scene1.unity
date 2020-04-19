@@ -2756,6 +2756,7 @@ MonoBehaviour:
   NextLevelButton: {fileID: 342746172}
   nextLevel: Level02
   levelToUnlock: 2
+  currentLevel: 0
   finish: {fileID: 1471170966}
 --- !u!4 &416202472
 Transform:
@@ -5580,6 +5581,7 @@ GameObject:
   - component: {fileID: 757914892}
   - component: {fileID: 757914891}
   - component: {fileID: 757914893}
+  - component: {fileID: 757914894}
   m_Layer: 5
   m_Name: ScoreNumber
   m_TagString: Untagged
@@ -5661,6 +5663,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &757914894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757914889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4896b364b9e2404781fabe9ab8585c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finished: 0
 --- !u!1001 &760205968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11767,6 +11782,25 @@ PrefabInstance:
       objectReference: {fileID: 151362665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d452927d2da60054bb54c55cc07f358f, type: 3}
+--- !u!1 &1532913788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779201944928499226, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779201945045576306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532913789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532913788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4896b364b9e2404781fabe9ab8585c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finished: 0
 --- !u!4 &1538958228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -13542,6 +13576,7 @@ GameObject:
   - component: {fileID: 1860259723}
   - component: {fileID: 1860259726}
   - component: {fileID: 1860259725}
+  - component: {fileID: 1860259727}
   m_Layer: 5
   m_Name: FinishLevel
   m_TagString: Untagged
@@ -13641,6 +13676,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1860259727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860259721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4896b364b9e2404781fabe9ab8585c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finished: 0
 --- !u!4 &1861807626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
@@ -14663,6 +14711,7 @@ GameObject:
   - component: {fileID: 2006507176}
   - component: {fileID: 2006507175}
   - component: {fileID: 2006507177}
+  - component: {fileID: 2006507178}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -14745,6 +14794,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &2006507178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006507173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4896b364b9e2404781fabe9ab8585c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finished: 0
 --- !u!1001 &2015471921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15621,7 +15683,7 @@ PrefabInstance:
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: sidewaysForce
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
@@ -15780,7 +15842,7 @@ PrefabInstance:
     - target: {fileID: 2006035952365742586, guid: b369893291262174d91b9dbe3ce3a1ab,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 195.3
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 2006035952365742586, guid: b369893291262174d91b9dbe3ce3a1ab,
         type: 3}

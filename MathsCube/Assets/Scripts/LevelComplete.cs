@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
+using UnityEngine.Advertisements;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,10 +23,14 @@ public class LevelComplete : MonoBehaviour
     public string nextLevel = "Level02";
     public int levelToUnlock = 2;
 
+    //starting from 0
+    public string currentLevel = "1";
+
     public AudioSource finish;
     private void Start()
     {
-        
+        Debug.Log("LevelButton" + currentLevel);
+
     }
 
 
@@ -38,6 +44,7 @@ public class LevelComplete : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        scoreText.GetComponent<AdManager>().showAd();
         Debug.Log("next level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -45,14 +52,21 @@ public class LevelComplete : MonoBehaviour
 
     public void Menu()
     {
-        fader.FadeTo("Levels");
-        SceneManager.LoadScene(0);
+        
+
+        scoreText.GetComponent<AdManager>().showAd();
+      
+            fader.FadeTo("Levels");
+            SceneManager.LoadScene(0);
+        
     }
 
     public void Retry()
     {
-        
+        scoreText.GetComponent<AdManager>().showAd();
+      
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
     public void AssignStars()
@@ -60,11 +74,15 @@ public class LevelComplete : MonoBehaviour
         //if used passed all the obstacles, show a screen with score, if score is 6-7, give 1 star, if 8- 2 starts, 9-10 - 3 start
         //if score is more than 6, unlock next level 
 
+        StringBuilder str = new StringBuilder();
+        str.Append("LevelButton");
+        str.Append(currentLevel);
 
         finish.Play();
 
         if (FindObjectOfType<Score>().score < 6)
         {
+            
 
 
             //disable arrow and activate padlock
@@ -83,14 +101,30 @@ public class LevelComplete : MonoBehaviour
 
             Lock.enabled = false;
 
+
+            //save into memore how many stars user got
+            if (FindObjectOfType<Score>().score == 9 || FindObjectOfType<Score>().score == 10)
+            {
+                
+                PlayerPrefs.SetInt(str.ToString(), 3);
+            }
+
             if (FindObjectOfType<Score>().score == 6 || FindObjectOfType<Score>().score == 7)
             {
+                //save into memore how many stars user got
+                PlayerPrefs.SetInt(str.ToString(), 1);
+
                 Star2.enabled = false;
                 Star3.enabled = false;
             }
 
             if (FindObjectOfType<Score>().score == 8)
             {
+                //save into memore how many stars user got
+                PlayerPrefs.SetInt(str.ToString(), 2);
+
+                
+
                 Star3.enabled = false;
             }
         }

@@ -34,9 +34,8 @@ public class starsAssignment : MonoBehaviour
             }
 
 
-        Star1.SetActive(true);
-        Star2.SetActive(true);
-        Star3.SetActive(true);
+        
+
 
 
     }

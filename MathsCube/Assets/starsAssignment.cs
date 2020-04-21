@@ -10,35 +10,35 @@ public class starsAssignment : MonoBehaviour
     public GameObject Star2;
     public GameObject Star3;
 
-
+    int m_Score;
     private void Start()
     {
-        Debug.Log(LevelButton.ToString());
+        SetText();
+
         
-            if (PlayerPrefs.GetInt(LevelButton.ToString()) == 1)
+            if (m_Score == 1)
             {
                 Star1.SetActive(true);
             }
             
-            if (PlayerPrefs.GetInt(LevelButton.ToString()) == 2)
+            if (m_Score == 2)
             {
                 Star1.SetActive(true);
-                Star2.SetActive(true);
+                Star3.SetActive(true);
             }
             
-            if (PlayerPrefs.GetInt(LevelButton.ToString()) == 3)
+            if (m_Score == 3)
             {
                 Star1.SetActive(true);
                 Star2.SetActive(true);
                 Star3.SetActive(true);
             }
 
-
-        
-
-
-
     }
 
-
+    void SetText()
+    {
+        //Fetch the score from the PlayerPrefs (set these Playerprefs in another script). If no Int of this name exists, the default is 0.
+        m_Score = PlayerPrefs.GetInt(LevelButton.name, 0);
+    }
 }

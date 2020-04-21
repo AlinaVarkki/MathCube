@@ -27,9 +27,12 @@ public class LevelComplete : MonoBehaviour
     public string currentLevel = "1";
 
     public AudioSource finish;
+
+    //string for button to assign stars
+    public string buttonName = "LevelButton1";
     private void Start()
     {
-        Debug.Log("LevelButton" + currentLevel);
+        
 
     }
 
@@ -74,9 +77,6 @@ public class LevelComplete : MonoBehaviour
         //if used passed all the obstacles, show a screen with score, if score is 6-7, give 1 star, if 8- 2 starts, 9-10 - 3 start
         //if score is more than 6, unlock next level 
 
-        StringBuilder str = new StringBuilder();
-        str.Append("LevelButton");
-        str.Append(currentLevel);
 
         finish.Play();
 
@@ -106,14 +106,17 @@ public class LevelComplete : MonoBehaviour
             if (FindObjectOfType<Score>().score == 9 || FindObjectOfType<Score>().score == 10)
             {
                 
-                PlayerPrefs.SetInt(str.ToString(), 3);
+                    PlayerPrefs.SetInt(buttonName, 3);
+                
             }
 
             if (FindObjectOfType<Score>().score == 6 || FindObjectOfType<Score>().score == 7)
             {
                 //save into memore how many stars user got
-                PlayerPrefs.SetInt(str.ToString(), 1);
-
+                if (PlayerPrefs.GetInt(buttonName) < 2)
+                {
+                    PlayerPrefs.SetInt(buttonName, 1);
+                }
                 Star2.enabled = false;
                 Star3.enabled = false;
             }
@@ -121,8 +124,10 @@ public class LevelComplete : MonoBehaviour
             if (FindObjectOfType<Score>().score == 8)
             {
                 //save into memore how many stars user got
-                PlayerPrefs.SetInt(str.ToString(), 2);
-
+                if (PlayerPrefs.GetInt(buttonName) < 3)
+                {
+                    PlayerPrefs.SetInt(buttonName, 2);
+                }
                 
 
                 Star3.enabled = false;

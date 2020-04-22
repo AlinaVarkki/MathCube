@@ -15590,7 +15590,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 18e5588700fa6d9499c5816a9dd55712, type: 2}
+      objectReference: {fileID: 2100000, guid: e2cc1ca61fa35eb49b36c1ecd3c62c59, type: 2}
     - target: {fileID: 1779201944928499226, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: m_Name
@@ -15684,7 +15684,7 @@ PrefabInstance:
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: sidewaysForce
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}

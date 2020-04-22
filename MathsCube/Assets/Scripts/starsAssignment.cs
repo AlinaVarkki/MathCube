@@ -40,5 +40,6 @@ public class starsAssignment : MonoBehaviour
     {
         //Fetch the score from the PlayerPrefs (set these Playerprefs in another script). If no Int of this name exists, the default is 0.
         m_Score = PlayerPrefs.GetInt(LevelButton.name, 0);
+        Debug.Log(m_Score);
     }
 }

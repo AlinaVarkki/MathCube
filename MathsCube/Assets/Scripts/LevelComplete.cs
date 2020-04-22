@@ -20,20 +20,16 @@ public class LevelComplete : MonoBehaviour
 
     public Button NextLevelButton;
 
-    public string nextLevel = "Level02";
-    public int levelToUnlock = 2;
-
-    //starting from 0
-    public string currentLevel = "1";
+    public int levelToUnlock;
 
     public AudioSource finish;
 
     //string for button to assign stars
-    public string buttonName = "LevelButton1";
+    public string buttonName;
     private void Start()
     {
-        
-
+        buttonName = "LevelButton" + SceneManager.GetActiveScene().buildIndex.ToString();
+        levelToUnlock = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
 
@@ -47,8 +43,8 @@ public class LevelComplete : MonoBehaviour
 
     public void LoadNextLevel()
     {
+
         scoreText.GetComponent<AdManager>().showAd();
-        Debug.Log("next level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -97,6 +93,12 @@ public class LevelComplete : MonoBehaviour
         }
         else
         {
+            //if unlocked level is smaller than next one, update int
+            if(PlayerPrefs.GetInt("LevelReached") < levelToUnlock)
+            {
+                PlayerPrefs.SetInt("LevelReached", levelToUnlock);
+            }
+
             WinLevel();
 
             Lock.enabled = false;

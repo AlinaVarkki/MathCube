@@ -21,7 +21,7 @@ public class AnswerNumber : MonoBehaviour{
 
         if (answerNumber.text == "")
         {
-            numberOnCube = UnityEngine.Random.Range(0, 10);
+            numberOnCube = UnityEngine.Random.Range(0, 15);
             answerNumber.text = numberOnCube.ToString();
         }
 

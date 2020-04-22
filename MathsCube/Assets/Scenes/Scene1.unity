@@ -6577,7 +6577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7649475, g: 0.54668033, b: 0.8584906, a: 0.95686275}
+  m_Color: {r: 0.4292453, g: 0.6279499, b: 1, a: 0.95686275}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7615,7 +7615,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.915, g: 0.98081225, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.8726415, g: 1, b: 0.97630537, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10568,7 +10568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.76862746, g: 0.54901963, b: 0.85882354, a: 1}
+  m_Color: {r: 0.43137255, g: 0.6313726, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15684,7 +15684,7 @@ PrefabInstance:
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: sidewaysForce
-      value: 250
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}

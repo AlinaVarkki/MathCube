@@ -51,7 +51,7 @@ public class ObstaclesArray : MonoBehaviour
                 //random withing group of  8 after 3 cubes
                 randomCubeNumber = Random.Range(Nextgroup, Nextgroup + 8);
             }
-            int answer = FindObjectOfType<EquationGenerator>().numbers1[i] * FindObjectOfType<EquationGenerator>().numbers2[i];
+            int answer = FindObjectOfType<EquationGenerator>().numbers1[i] + FindObjectOfType<EquationGenerator>().numbers2[i];
 
             
 

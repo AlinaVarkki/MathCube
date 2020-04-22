@@ -50,8 +50,8 @@ public class EquationGenerator : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            numbers1[i] = Random.Range(0, 3);
-            numbers2[i] = Random.Range(0, 3);
+            numbers1[i] = Random.Range(1, 9);
+            numbers2[i] = Random.Range(1, 9);
         }
     }
 
@@ -62,7 +62,7 @@ public class EquationGenerator : MonoBehaviour
         {
             firstVar = numbers1[currentEquationNumber];
             secondVar = numbers2[currentEquationNumber];
-            equation.text = firstVar + " * " + secondVar;
+            equation.text = firstVar + " + " + secondVar;
             currentEquationNumber++;
         }
         else {
@@ -96,7 +96,7 @@ public class EquationGenerator : MonoBehaviour
         for (int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
         {
          
-            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar + secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
             {
 
                 FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";

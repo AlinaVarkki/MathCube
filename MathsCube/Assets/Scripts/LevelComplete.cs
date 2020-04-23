@@ -39,9 +39,11 @@ public class LevelComplete : MonoBehaviour
     {
         scoreText.text = FindObjectOfType<Score>().score.ToString();
 
-    }
 
-    public void LoadNextLevel()
+
+        }
+
+        public void LoadNextLevel()
     {
 
         scoreText.GetComponent<AdManager>().showAd();
@@ -93,8 +95,10 @@ public class LevelComplete : MonoBehaviour
         }
         else
         {
+            NextLevelButton.interactable = true;
+
             //if unlocked level is smaller than next one, update int
-            if(PlayerPrefs.GetInt("LevelReached") < levelToUnlock)
+            if (PlayerPrefs.GetInt("LevelReached") < levelToUnlock)
             {
                 PlayerPrefs.SetInt("LevelReached", levelToUnlock);
             }

@@ -2482,7 +2482,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 342746173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 416202471}
+        m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &342746173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5146,7 +5157,7 @@ PrefabInstance:
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -117.8118
+      value: -109.44
       objectReference: {fileID: 0}
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}
@@ -7065,7 +7076,7 @@ PrefabInstance:
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -109.468605
+      value: -118.79
       objectReference: {fileID: 0}
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}
@@ -13028,7 +13039,7 @@ PrefabInstance:
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -108.60099
+      value: -109.49
       objectReference: {fileID: 0}
     - target: {fileID: 7869836226610242884, guid: d452927d2da60054bb54c55cc07f358f,
         type: 3}

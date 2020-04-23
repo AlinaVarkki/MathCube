@@ -2482,18 +2482,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 342746173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 416202471}
-        m_MethodName: LoadNextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &342746173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6586,7 +6575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4292453, g: 0.6279499, b: 1, a: 0.95686275}
+  m_Color: {r: 0.7649475, g: 0.54668033, b: 0.8584906, a: 0.95686275}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7624,7 +7613,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8726415, g: 1, b: 0.97630537, a: 1}
+  m_BackGroundColor: {r: 1, g: 0.85203034, b: 0.8254717, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10577,7 +10566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43137255, g: 0.6313726, b: 1, a: 1}
+  m_Color: {r: 0.76862746, g: 0.54901963, b: 0.85882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15599,7 +15588,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 18e5588700fa6d9499c5816a9dd55712, type: 2}
+      objectReference: {fileID: 2100000, guid: f94f2aa09fa4f974189b8975c45bd2a3, type: 2}
     - target: {fileID: 1779201944928499226, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: m_Name
@@ -15693,7 +15682,7 @@ PrefabInstance:
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}
       propertyPath: sidewaysForce
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3456238192892677580, guid: f0d5b4fc6a39e1d4697d90b0498526dc,
         type: 3}

@@ -78,7 +78,7 @@ public class LevelComplete : MonoBehaviour
 
         if (FindObjectOfType<Score>().score < 6)
         {
-            
+            NextLevelButton.interactable = false;    
 
 
             //disable arrow and activate padlock

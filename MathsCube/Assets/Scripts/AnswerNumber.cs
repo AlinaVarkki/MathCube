@@ -41,6 +41,10 @@ public class AnswerNumber : MonoBehaviour{
             {
                 numberOnCube = UnityEngine.Random.Range(6, 16);
             }
+            else if (currentScene == 5)
+            {
+                numberOnCube = UnityEngine.Random.Range(6, 20);
+            }
             answerNumber.text = numberOnCube.ToString();
         }
 

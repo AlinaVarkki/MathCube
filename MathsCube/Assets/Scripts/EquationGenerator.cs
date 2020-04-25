@@ -75,6 +75,13 @@ public class EquationGenerator : MonoBehaviour
                 numbers2[i] = Random.Range(1, 12);
             }
         }
+        else if (currentScene == 5) {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(2, 6);
+                numbers2[i] = Random.Range(2, 6);
+            }
+        }
 
 
     }
@@ -92,7 +99,7 @@ public class EquationGenerator : MonoBehaviour
             {
                 equation.text = firstVar + " + " + secondVar;
             }
-            else if (currentScene == 2)
+            else if (currentScene == 2 || currentScene == 5)
             {
                 equation.text = firstVar + " * " + secondVar;
             }
@@ -153,7 +160,7 @@ public class EquationGenerator : MonoBehaviour
                 }
             }
         }
-        else if (currentScene == 2) {
+        else if (currentScene == 2 || currentScene == 5) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 

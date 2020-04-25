@@ -43,7 +43,7 @@ public class ObstaclesArray : MonoBehaviour
             if (currentScene  == 1 || currentScene == 4)
             {
                 answer = firsNum + secindNum;
-            }else if (currentScene  == 2)
+            }else if (currentScene  == 2 || currentScene == 5)
             {
                 answer = firsNum * secindNum;
             }

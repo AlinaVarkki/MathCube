@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -14,7 +15,7 @@ public class EquationGenerator : MonoBehaviour
     public int[] numbers1;
     public int[] numbers2;
     public int currentEquationNumber = 0;
-
+    public int currentScene;
     
 
     //panel appearing after last equation
@@ -25,6 +26,9 @@ public class EquationGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+
+
         //fill arrays with numbers at the beginning 
         FillArrays();
 
@@ -36,33 +40,67 @@ public class EquationGenerator : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     private void FillArrays()
     {
+
         numbers1 = new int[10];
         numbers1 = new int[10];
 
-        for (int i = 0; i < 10; i++)
-        {
-            numbers1[i] = Random.Range(1, 9);
-            numbers2[i] = Random.Range(1, 9);
+        //generated numbers depend on the current level number
+        if (currentScene == 1) {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(1, 9);
+                numbers2[i] = Random.Range(1, 9);
+            }
+        }else if (currentScene == 2) {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(1, 5);
+                numbers2[i] = Random.Range(1, 5);
+            }
         }
+        else if (currentScene == 3) {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(1, 10);
+                numbers2[i] = Random.Range(0, numbers1[i]);
+            }
+        }
+        else if (currentScene == 4) {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(1, 12);
+                numbers2[i] = Random.Range(1, 12);
+            }
+        }
+
+
     }
 
     public void NextEquation()
     {
        if (currentEquationNumber <numbers1.Length)
-      // if (currentEquationNumber <2)
+      
         {
             firstVar = numbers1[currentEquationNumber];
             secondVar = numbers2[currentEquationNumber];
-            equation.text = firstVar + " + " + secondVar;
+            
+            //sign depends on the current scene
+            if (currentScene == 1 || currentScene == 4)
+            {
+                equation.text = firstVar + " + " + secondVar;
+            }
+            else if (currentScene == 2)
+            {
+                equation.text = firstVar + " * " + secondVar;
+            }
+            else if (currentScene == 3)
+            {
+                equation.text = firstVar + " - " + secondVar;
+            }
+
             currentEquationNumber++;
         }
         else {
@@ -93,25 +131,69 @@ public class EquationGenerator : MonoBehaviour
 
 
         //assign correct tags to current equation right answers
-        for (int i = 0;  i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+        if (currentScene == 1 || currentScene == 4)
         {
-         
-            if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar + secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+            for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 
-                FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
-            }
-            else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
-            {
+                if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar + secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+                {
 
-                //don't do anything in this case
-            }
-            else {
-                //if answer of cube is not current equation answer, tag is obstacle
-                FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+                }
+                else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
+                {
+
+                    //don't do anything in this case
+                }
+                else
+                {
+                    //if answer of cube is not current equation answer, tag is obstacle
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+                }
             }
         }
+        else if (currentScene == 2) {
+            for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+            {
 
+                if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar * secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+                {
+
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+                }
+                else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
+                {
+
+                    //don't do anything in this case
+                }
+                else
+                {
+                    //if answer of cube is not current equation answer, tag is obstacle
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+                }
+            }
+        }else if (currentScene == 3) {
+            for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+            {
+
+                if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar - secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+                {
+
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+                }
+                else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
+                {
+
+                    //don't do anything in this case
+                }
+                else
+                {
+                    //if answer of cube is not current equation answer, tag is obstacle
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+                }
+            }
+        }
 
 
 

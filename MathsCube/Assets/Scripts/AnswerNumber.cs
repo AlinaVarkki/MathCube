@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AnswerNumber : MonoBehaviour{
@@ -10,6 +11,7 @@ public class AnswerNumber : MonoBehaviour{
 
    public Rigidbody obstacle;
    public Rigidbody player;
+    public int currentScene;
 
     //number value
     public Text value;
@@ -18,20 +20,31 @@ public class AnswerNumber : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+
 
         if (answerNumber.text == "")
         {
-            numberOnCube = UnityEngine.Random.Range(0, 15);
+            if (currentScene == 1)
+            {
+                numberOnCube = UnityEngine.Random.Range(3, 15);
+            }
+            else if (currentScene == 2)
+            {
+                numberOnCube = UnityEngine.Random.Range(0, 10);
+            }
+            else if (currentScene == 3)
+            {
+                numberOnCube = UnityEngine.Random.Range(0, 6);
+            }
+            else if (currentScene == 4)
+            {
+                numberOnCube = UnityEngine.Random.Range(6, 16);
+            }
             answerNumber.text = numberOnCube.ToString();
         }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
 
 }

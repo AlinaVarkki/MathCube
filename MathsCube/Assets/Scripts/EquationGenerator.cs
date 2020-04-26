@@ -157,6 +157,111 @@ public class EquationGenerator : MonoBehaviour
                 numbers1[i] = ans;
                 numbers2[i] = num1;
             }
+        }else if (currentScene == 15)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 20);
+                numbers2[i] = Random.Range(5, 20);
+            }
+        }
+        else if (currentScene == 16)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(4, 8);
+                numbers2[i] = Random.Range(4, 8);
+            }
+        }else if (currentScene == 17)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 28);
+                numbers2[i] = Random.Range(4, numbers1[i]);
+            }
+        }else if (currentScene == 18)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(2, 8);
+                int num2 = Random.Range(2, 8);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
+        
+        else if (currentScene == 19)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(6, 22);
+                numbers2[i] = Random.Range(6, 22);
+            }
+        }
+        else if (currentScene == 20)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 9);
+                numbers2[i] = Random.Range(5, 9);
+            }
+        }else if (currentScene == 21)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(9, 32);
+                numbers2[i] = Random.Range(4, numbers1[i]);
+            }
+        }else if (currentScene == 22)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(3, 9);
+                int num2 = Random.Range(3, 9);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
+        else if (currentScene == 23 || currentScene == 27|| currentScene == 31)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(8, 25);
+                numbers2[i] = Random.Range(8, 25);
+            }
+        }
+        else if (currentScene == 24||currentScene == 28||currentScene == 32)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 10);
+                numbers2[i] = Random.Range(5, 10);
+            }
+        }else if (currentScene == 25 || currentScene == 29|| currentScene == 33)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(9, 40);
+                numbers2[i] = Random.Range(6, numbers1[i]);
+            }
+        }else if (currentScene == 26 || currentScene == 30|| currentScene == 34)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(4, 14);
+                int num2 = Random.Range(4, 14);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
         }
 
 
@@ -172,18 +277,18 @@ public class EquationGenerator : MonoBehaviour
             secondVar = numbers2[currentEquationNumber];
             
             //sign depends on the current scene
-            if (currentScene == 1 || currentScene == 4 || currentScene == 7|| currentScene == 11)
+            if (currentScene == 1 || currentScene == 4 || currentScene == 7|| currentScene == 11|| currentScene == 15 || currentScene == 19 || currentScene == 23 || currentScene == 27 || currentScene == 31 || currentScene == 35 || currentScene == 39 || currentScene == 43 || currentScene ==47)
             {
                 equation.text = firstVar + " + " + secondVar;
             }
-            else if (currentScene == 2 || currentScene == 5|| currentScene == 8|| currentScene == 12)
+            else if (currentScene == 2 || currentScene == 5|| currentScene == 8|| currentScene == 12|| currentScene == 16 || currentScene == 20 || currentScene == 24 || currentScene == 28 || currentScene == 32 || currentScene == 36 || currentScene == 40 || currentScene == 44 || currentScene == 48)
             {
                 equation.text = firstVar + " * " + secondVar;
             }
-            else if (currentScene == 3 || currentScene == 6|| currentScene == 9|| currentScene == 13)
+            else if (currentScene == 3 || currentScene == 6|| currentScene == 9|| currentScene == 13 || currentScene == 17 || currentScene == 21 || currentScene == 25 || currentScene == 29 || currentScene == 33 || currentScene == 37 || currentScene == 41 || currentScene == 45 || currentScene == 49)
             {
                 equation.text = firstVar + " - " + secondVar;
-            }else if (currentScene == 10 || currentScene == 14)
+            }else if (currentScene == 10 || currentScene == 14 || currentScene == 18 || currentScene == 22 || currentScene == 26 || currentScene == 30 || currentScene == 34 || currentScene == 38 || currentScene == 42 || currentScene == 46 || currentScene == 50)
             {
                 equation.text = firstVar + " / " + secondVar;
             }
@@ -218,7 +323,7 @@ public class EquationGenerator : MonoBehaviour
 
 
         //assign correct tags to current equation right answers
-        if (currentScene == 1 || currentScene == 4|| currentScene == 7 || currentScene == 11)
+        if (currentScene == 1 || currentScene == 4 || currentScene == 7 || currentScene == 11 || currentScene == 15 || currentScene == 19 || currentScene == 23 || currentScene == 27 || currentScene == 31 || currentScene == 35 || currentScene == 39 || currentScene == 43 || currentScene == 47)
         {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
@@ -240,7 +345,7 @@ public class EquationGenerator : MonoBehaviour
                 }
             }
         }
-        else if (currentScene == 2 || currentScene == 5|| currentScene == 8 || currentScene == 12) {
+        else if (currentScene == 2 || currentScene == 5 || currentScene == 8 || currentScene == 12 || currentScene == 16 || currentScene == 20 || currentScene == 24 || currentScene == 28 || currentScene == 32 || currentScene == 36 || currentScene == 40 || currentScene == 44 || currentScene == 48) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 
@@ -261,7 +366,7 @@ public class EquationGenerator : MonoBehaviour
                 }
             }
         }
-        else if (currentScene == 3 || currentScene == 6|| currentScene == 9 || currentScene == 13) {
+        else if (currentScene == 3 || currentScene == 6 || currentScene == 9 || currentScene == 13 || currentScene == 17 || currentScene == 21 || currentScene == 25 || currentScene == 29 || currentScene == 33 || currentScene == 37 || currentScene == 41 || currentScene == 45 || currentScene == 49) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 
@@ -281,7 +386,7 @@ public class EquationGenerator : MonoBehaviour
                     FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
                 }
             }
-        }else if (currentScene == 10 || currentScene == 14) {
+        }else if (currentScene == 10 || currentScene == 14 || currentScene == 18 || currentScene == 22 || currentScene == 26 || currentScene == 30 || currentScene == 34 || currentScene == 38 || currentScene == 42 || currentScene == 46 || currentScene == 50) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 

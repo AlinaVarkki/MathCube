@@ -82,6 +82,83 @@ public class EquationGenerator : MonoBehaviour
                 numbers2[i] = Random.Range(2, 6);
             }
         }
+        else if (currentScene == 6)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(2, 15);
+                numbers2[i] = Random.Range(1, numbers1[i]);
+            }
+        }else if (currentScene == 7)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(3, 15);
+                numbers2[i] = Random.Range(3, 15);
+            }
+        }else if (currentScene == 8)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(3, 7);
+                numbers2[i] = Random.Range(3, 7);
+            }
+        }else if (currentScene == 9)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(3, 18);
+                numbers2[i] = Random.Range(2, numbers1[i]);
+            }
+        }else if (currentScene == 10)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(1, 5);
+                int num2 = Random.Range(1, 5);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
+        
+        else if (currentScene == 11)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 20);
+                numbers2[i] = Random.Range(5, 20);
+            }
+        }else if (currentScene == 12)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(4, 8);
+                numbers2[i] = Random.Range(4, 8);
+            }
+        }else if (currentScene == 13)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(4, 25);
+                numbers2[i] = Random.Range(3, numbers1[i]);
+            }
+        }else if (currentScene == 14)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(2, 6);
+                int num2 = Random.Range(2, 6);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
+
 
 
     }
@@ -95,17 +172,20 @@ public class EquationGenerator : MonoBehaviour
             secondVar = numbers2[currentEquationNumber];
             
             //sign depends on the current scene
-            if (currentScene == 1 || currentScene == 4)
+            if (currentScene == 1 || currentScene == 4 || currentScene == 7|| currentScene == 11)
             {
                 equation.text = firstVar + " + " + secondVar;
             }
-            else if (currentScene == 2 || currentScene == 5)
+            else if (currentScene == 2 || currentScene == 5|| currentScene == 8|| currentScene == 12)
             {
                 equation.text = firstVar + " * " + secondVar;
             }
-            else if (currentScene == 3)
+            else if (currentScene == 3 || currentScene == 6|| currentScene == 9|| currentScene == 13)
             {
                 equation.text = firstVar + " - " + secondVar;
+            }else if (currentScene == 10 || currentScene == 14)
+            {
+                equation.text = firstVar + " / " + secondVar;
             }
 
             currentEquationNumber++;
@@ -138,7 +218,7 @@ public class EquationGenerator : MonoBehaviour
 
 
         //assign correct tags to current equation right answers
-        if (currentScene == 1 || currentScene == 4)
+        if (currentScene == 1 || currentScene == 4|| currentScene == 7 || currentScene == 11)
         {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
@@ -160,7 +240,7 @@ public class EquationGenerator : MonoBehaviour
                 }
             }
         }
-        else if (currentScene == 2 || currentScene == 5) {
+        else if (currentScene == 2 || currentScene == 5|| currentScene == 8 || currentScene == 12) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 
@@ -180,11 +260,32 @@ public class EquationGenerator : MonoBehaviour
                     FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
                 }
             }
-        }else if (currentScene == 3) {
+        }
+        else if (currentScene == 3 || currentScene == 6|| currentScene == 9 || currentScene == 13) {
             for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
             {
 
                 if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar - secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
+                {
+
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";
+                }
+                else if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag == "OriginalAnswer")
+                {
+
+                    //don't do anything in this case
+                }
+                else
+                {
+                    //if answer of cube is not current equation answer, tag is obstacle
+                    FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Obstacle";
+                }
+            }
+        }else if (currentScene == 10 || currentScene == 14) {
+            for (int i = 0; i < FindObjectOfType<ObstaclesArray>().obstaclesArray.Length; i++)
+            {
+
+                if (FindObjectOfType<ObstaclesArray>().obstaclesArray[i].answerNumber.text == (firstVar / secondVar).ToString() && FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag != "OriginalAnswer")
                 {
 
                     FindObjectOfType<ObstaclesArray>().obstaclesArray[i].tag = "Answer";

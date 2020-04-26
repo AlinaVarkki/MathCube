@@ -44,9 +44,37 @@ public class AnswerNumber : MonoBehaviour{
             else if (currentScene == 5)
             {
                 numberOnCube = UnityEngine.Random.Range(6, 20);
+            }else if (currentScene == 6)
+            {
+                numberOnCube = UnityEngine.Random.Range(1, 10);
+            }else if (currentScene == 7)
+            {
+                numberOnCube = UnityEngine.Random.Range(11, 26);
+            }else if (currentScene == 8)
+            {
+                numberOnCube = UnityEngine.Random.Range(16, 30);
+            }else if (currentScene == 9)
+            {
+                numberOnCube = UnityEngine.Random.Range(1, 13);
+            }else if (currentScene == 10)
+            {
+                numberOnCube = UnityEngine.Random.Range(1, 5);
+            }else if (currentScene == 11)
+            {
+                numberOnCube = UnityEngine.Random.Range(15, 35);
+            }else if (currentScene == 12)
+            {
+                numberOnCube = UnityEngine.Random.Range(25, 50);
+            }else if (currentScene == 13)
+            {
+                numberOnCube = UnityEngine.Random.Range(5, 14);
+            }else if (currentScene == 14)
+            {
+                numberOnCube = UnityEngine.Random.Range(1, 5);
             }
             answerNumber.text = numberOnCube.ToString();
         }
+
 
     }
 

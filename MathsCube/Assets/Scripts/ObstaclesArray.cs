@@ -40,16 +40,19 @@ public class ObstaclesArray : MonoBehaviour
             int firsNum = FindObjectOfType<EquationGenerator>().numbers1[i];
             int secindNum = FindObjectOfType<EquationGenerator>().numbers2[i];
 
-            if (currentScene  == 1 || currentScene == 4)
+            if (currentScene  == 1 || currentScene == 4|| currentScene == 7|| currentScene == 11)
             {
                 answer = firsNum + secindNum;
-            }else if (currentScene  == 2 || currentScene == 5)
+            }else if (currentScene  == 2 || currentScene == 5|| currentScene == 8 || currentScene == 12)
             {
                 answer = firsNum * secindNum;
             }
-            else if (currentScene  == 3)
+            else if (currentScene == 3 || currentScene == 6|| currentScene == 9 || currentScene == 13)
             {
                 answer = firsNum - secindNum;
+            }else if (currentScene == 10 || currentScene == 14)
+            {
+                answer = firsNum / secindNum;
             }
 
             obstaclesArray[randomCubeNumber].answerNumber.text = answer.ToString();

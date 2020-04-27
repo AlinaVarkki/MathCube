@@ -2986,7 +2986,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f786ba90565b97746991cfe740c0dfc4, type: 3}
     m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
@@ -3203,6 +3203,7 @@ MonoBehaviour:
   numbers1: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   numbers2: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   currentEquationNumber: 0
+  currentScene: 0
   finishLevelPanel: {fileID: 1860259721}
 --- !u!114 &468948543 stripped
 MonoBehaviour:
@@ -11978,6 +11979,7 @@ MonoBehaviour:
   - {fileID: 977171352}
   - {fileID: 821705800}
   player: {fileID: 151362665}
+  answer: 0
 --- !u!4 &1551751873
 Transform:
   m_ObjectHideFlags: 0
@@ -13438,6 +13440,7 @@ MonoBehaviour:
   answerNumber: {fileID: 730772518}
   obstacle: {fileID: 582758422}
   player: {fileID: 151362665}
+  currentScene: 0
   value: {fileID: 0}
 --- !u!114 &1829226400 stripped
 MonoBehaviour:

@@ -73,6 +73,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 if (FindObjectOfType<Score>().score > 5) 
                 {
+
                     //stop the object first
                     FindObjectOfType<PlayerMovement>().decreasing = true;
 
@@ -81,6 +82,10 @@ public class PlayerCollision : MonoBehaviour
                 }
                 else
                 {
+                    if (FindObjectOfType<Score>().score > 2) {
+                        FindObjectOfType<AdManager>().showAd();
+                    }
+
                     movement.enabled = false;
                     FindObjectOfType<GameManager>().EndGame();
                 }

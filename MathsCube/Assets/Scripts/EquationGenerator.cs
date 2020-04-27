@@ -263,6 +263,81 @@ public class EquationGenerator : MonoBehaviour
                 numbers2[i] = num1;
             }
         }
+        
+        
+        
+        else if (currentScene == 35 || currentScene == 39)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(8, 26);
+                numbers2[i] = Random.Range(8, 26);
+            }
+        }
+        else if (currentScene == 36 || currentScene == 40)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(5, 11);
+                numbers2[i] = Random.Range(5, 11);
+            }
+        }else if (currentScene == 37 || currentScene == 41)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(10, 45);
+                numbers2[i] = Random.Range(8, numbers1[i]);
+            }
+        }else if (currentScene == 38 || currentScene == 42)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(4, 16);
+                int num2 = Random.Range(4, 16);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
+        
+
+        else if (currentScene == 43 || currentScene == 47)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(10, 30);
+                numbers2[i] = Random.Range(10, 30);
+            }
+        }
+        else if (currentScene == 44 || currentScene == 48)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(6, 12);
+                numbers2[i] = Random.Range(6, 12);
+            }
+        }else if (currentScene == 45 || currentScene == 49)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                numbers1[i] = Random.Range(10, 55);
+                numbers2[i] = Random.Range(8, numbers1[i]);
+            }
+        }else if (currentScene == 46 || currentScene == 50)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //for division
+                int num1 = Random.Range(4, 20);
+                int num2 = Random.Range(4, 20);
+                int ans = num1 * num2;
+
+                numbers1[i] = ans;
+                numbers2[i] = num1;
+            }
+        }
 
 
 

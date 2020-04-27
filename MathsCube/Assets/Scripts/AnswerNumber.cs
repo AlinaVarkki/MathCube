@@ -107,54 +107,30 @@ public class AnswerNumber : MonoBehaviour{
             }else if (currentScene == 26 || currentScene == 30|| currentScene == 34)
             {
                 numberOnCube = UnityEngine.Random.Range(3, 12);
-            }else if (currentScene == 35)
+            }else if (currentScene == 35 || currentScene == 39)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 36)
+                numberOnCube = UnityEngine.Random.Range(22, 45);
+            }else if (currentScene == 36 || currentScene == 40)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 37)
+                numberOnCube = UnityEngine.Random.Range(35, 90);
+            }else if (currentScene == 37 || currentScene == 41)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 38)
+                numberOnCube = UnityEngine.Random.Range(6, 25);
+            }else if (currentScene == 38 || currentScene == 42)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 39)
+                numberOnCube = UnityEngine.Random.Range(3, 14);
+            }else if (currentScene == 43 || currentScene == 47)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 40)
+                numberOnCube = UnityEngine.Random.Range(27, 53);
+            }else if (currentScene == 44 || currentScene == 48)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 41)
+                numberOnCube = UnityEngine.Random.Range(45, 100);
+            }else if (currentScene == 45 || currentScene == 49)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 42)
+                numberOnCube = UnityEngine.Random.Range(6, 30);
+            }else if (currentScene == 46 ||currentScene == 50)
             {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 43)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 44)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 45)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 46)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 47)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 48)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 49)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
-            }else if (currentScene == 50)
-            {
-                numberOnCube = UnityEngine.Random.Range(0, 0);
+                numberOnCube = UnityEngine.Random.Range(3, 14);
             }
             answerNumber.text = numberOnCube.ToString();
         }

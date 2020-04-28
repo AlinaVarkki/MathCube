@@ -48,7 +48,7 @@ public class LevelComplete : MonoBehaviour
         public void LoadNextLevel()
     {
 
-        if (currentScene > 5)
+        if (currentScene > 5 || currentScene%2 == 1)
         {
             scoreText.GetComponent<AdManager>().showAd();
         }
@@ -61,7 +61,7 @@ public class LevelComplete : MonoBehaviour
     public void Menu()
     {
         
-
+        
         scoreText.GetComponent<AdManager>().showAd();
       
             fader.FadeTo("Levels");
@@ -110,7 +110,7 @@ public class LevelComplete : MonoBehaviour
                 PlayerPrefs.SetInt("LevelReached", levelToUnlock);
             }
 
-            WinLevel();
+    
 
             Lock.enabled = false;
 
@@ -150,9 +150,5 @@ public class LevelComplete : MonoBehaviour
         
     }
 
-    public void WinLevel()
-    {
-        //unlock next level
-        PlayerPrefs.SetInt("LevelReached", levelToUnlock);
-    }
+    
 }

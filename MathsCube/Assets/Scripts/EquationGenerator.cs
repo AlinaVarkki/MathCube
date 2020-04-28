@@ -26,6 +26,8 @@ public class EquationGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         equation.fontSize = 65;
         
 

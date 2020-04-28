@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour{
 
     public GameObject finishPanel;
 
-    public float forwardForce = 2000f;
+    private float forwardForce = 2200f;
     public float sidewaysForce = 5000f;
     private float screenCenterX;
     public float decreasingSpeed = 1;

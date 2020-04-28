@@ -21,13 +21,15 @@ public class LevelComplete : MonoBehaviour
     public Button NextLevelButton;
 
     public int levelToUnlock;
-
+    public int currentScene;
     public AudioSource finish;
 
     //string for button to assign stars
     public string buttonName;
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+
         buttonName = "LevelButton" + SceneManager.GetActiveScene().buildIndex.ToString();
         levelToUnlock = SceneManager.GetActiveScene().buildIndex + 1;
     }
@@ -46,7 +48,12 @@ public class LevelComplete : MonoBehaviour
         public void LoadNextLevel()
     {
 
-        scoreText.GetComponent<AdManager>().showAd();
+        if (currentScene > 5)
+        {
+            scoreText.GetComponent<AdManager>().showAd();
+        }
+
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

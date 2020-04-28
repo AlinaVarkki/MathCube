@@ -82,7 +82,7 @@ public class PlayerCollision : MonoBehaviour
                 }
                 else
                 {
-                    if (FindObjectOfType<Score>().score > 2) {
+                    if (FindObjectOfType<Score>().score > 3) {
                         FindObjectOfType<AdManager>().showAd();
                     }
 

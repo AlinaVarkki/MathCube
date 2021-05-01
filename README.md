@@ -9,7 +9,7 @@ MathCube is published on Google Play and can be downloaded [HERE](https://play.g
 
 ## Visuals
 
-![alt text](https://play-lh.googleusercontent.com/PnjXLHYx9y2B-RTmsPpoGXWt_J0n0VsO9_EThxSyNVCsNaEHLdkrtAwTOxqXAm6t6kY=w2477-h1302-rw)
+![alt text](https://play-lh.googleusercontent.com/PnjXLHYx9y2B-RTmsPpoGXWt_J0n0VsO9_EThxSyNVCsNaEHLdkrtAwTOxqXAm6t6kY=w2477-h1302-rw){:height="50%" width="50%"}
 ![alt text](https://play-lh.googleusercontent.com/-cTKUFtKkdtZqlUkHnf3RUocnR_aHfVNRcp_AZceZEFbKcr0-amd4fn1fcZRsS3Wc1c=w2477-h1302-rw)
 ![alt text](https://play-lh.googleusercontent.com/6SY45Uy_2Pm09iiei1JPb-2LfhibJzmxDEpvWfZZiv8EA0juVPDLv0h2m_ko8NiZVg=w2477-h1302-rw)
 

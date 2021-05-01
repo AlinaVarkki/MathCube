@@ -1,6 +1,6 @@
 
 <h2>MathCube</h2>
-<p>MathCube is a game for kids that requires the player to count while playing it. MathCube has 50 levels that walk the player through addition, subtraction, multiplication, and division. It is developed in Unity using C#.<br>
+<p>MathCube is a game that requires the player to count. MathCube has 50 levels that walk the player through addition, subtraction, multiplication, and division. It is developed in Unity using C#.<br>
 </p>
 
 <h2>Installation</h2>

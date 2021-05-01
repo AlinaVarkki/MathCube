@@ -1,10 +1,10 @@
 
 <h2>MathCube</h2>
-<p>MathCube is a game that requires the player to count. MathCube has 50 levels that walk the player through addition, subtraction, multiplication, and division. It is developed in Unity using C#.<br>
+<p>MathCube is a game that requires the player to count and break cubes with right answers. MathCube has 50 levels that walk the player through addition, subtraction, multiplication, and division. It is developed in Unity using C#.<br>
 </p>
 
 <h2>Installation</h2>
-<p>MathCube is published on Google Play and can be downloaded <a href="https://play.google.com/store/apps/details?id=com.AlicityDev.MathCube&fbclid=IwAR2cMhKaSWpnTwBIPiR8nIWYynxLJI8Uh5DspD3AdM3DNo4g4VKxrybjfZs">HERE</a><br>
+<p>MathCube is published on Google Play and can be downloaded <a href="https://play.google.com/store/apps/details?id=com.AlicityDev.MathCube&fbclid=IwAR2cMhKaSWpnTwBIPiR8nIWYynxLJI8Uh5DspD3AdM3DNo4g4VKxrybjfZs">HERE</a> <br>
 </p>
 
 <h2>Visuals</h2>

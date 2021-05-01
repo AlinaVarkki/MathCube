@@ -9,7 +9,7 @@
 
 <h2>Visuals</h2>
 <p>
-<img src="MathCube.gif"/ width="31%">
+<img src="MathCube.gif"/ width="35%">
 <img src="https://play-lh.googleusercontent.com/PnjXLHYx9y2B-RTmsPpoGXWt_J0n0VsO9_EThxSyNVCsNaEHLdkrtAwTOxqXAm6t6kY=w2477-h1302-rw"/ width="31%">
 <img src="https://play-lh.googleusercontent.com/xLJh0zvq1TFWbv4ucufdIFRPyT-SmCCv2wJo_YkYLDtHt6jRYrT0pv7iU_T_-ZTa53M=w2477-h1302-rw"/ width="31%">
 <img src="https://play-lh.googleusercontent.com/6SY45Uy_2Pm09iiei1JPb-2LfhibJzmxDEpvWfZZiv8EA0juVPDLv0h2m_ko8NiZVg=w2477-h1302-rw"/ width="31%">
